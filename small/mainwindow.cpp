@@ -8,6 +8,10 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    QPixmap pix("./Image/R.jfif");
+    int w = ui->lblImage->width();
+    int h = ui->lblImage->height();
+    ui->lblImage->setPixmap(pix.scaled(w,h, Qt::KeepAspectRatio));
 }
 
 MainWindow::~MainWindow()
@@ -32,8 +36,6 @@ void MainWindow::on_pblogin_clicked()
     {
         QMessageBox::warning(this, "login", "failed");// you have to give your box login
     }
-
-
 
 }
 
